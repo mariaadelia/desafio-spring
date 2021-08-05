@@ -10,8 +10,7 @@ import java.util.Optional;
 @Transactional
 public class ChocolateService {
 
-    @Autowired
-    ChocolateRepository repository;
+    @Autowired ChocolateRepository repository;
 
     public Iterable<Chocolate> getAll() {
         return repository.findAll();
@@ -21,7 +20,11 @@ public class ChocolateService {
         return repository.findById(id);
     }
 
-    public Chocolate create(Chocolate chocolate) {
+    public Chocolate save(Chocolate chocolate) {
         return repository.save(chocolate);
+    }
+
+    public Iterable<Chocolate> saveAll(Iterable<Chocolate> chocolates) {
+        return repository.saveAll(chocolates);
     }
 }

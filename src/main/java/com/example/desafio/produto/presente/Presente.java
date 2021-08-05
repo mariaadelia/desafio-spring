@@ -11,8 +11,6 @@ import java.util.List;
 public class Presente extends Produto {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "presente_id", insertable = false, updatable = false, nullable = false,
-            foreignKey = @ForeignKey(name = "presente_item_presente_fk"))
     private final List<ItemPresente> itensPresente = new ArrayList<>();
 
     public List<ItemPresente> getItensPresente() {

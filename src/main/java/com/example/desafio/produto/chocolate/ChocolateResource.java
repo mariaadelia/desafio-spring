@@ -23,7 +23,7 @@ public class ChocolateResource {
 
     @PostMapping({"", "/"})
     public ResponseEntity<Chocolate> createChocolate(@RequestBody Chocolate chocolate) {
-        return ResponseEntity.ok(chocolateService.create(chocolate));
+        return ResponseEntity.ok(chocolateService.save(chocolate));
     }
 
 }

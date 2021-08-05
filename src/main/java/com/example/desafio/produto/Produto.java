@@ -13,8 +13,11 @@ public abstract class Produto {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     private String nome;
+
+    @Column(name = "preco", nullable = false)
+    private Double preco;
 
     @ElementCollection
     @CollectionTable(name = "produto_notas", joinColumns = @JoinColumn(
@@ -33,6 +36,14 @@ public abstract class Produto {
 
     public String getNome() {
         return nome;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 
     public void setNome(String nome) {
