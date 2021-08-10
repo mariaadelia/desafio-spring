@@ -16,9 +16,6 @@ public abstract class Produto {
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "preco", nullable = false)
-    private Double preco;
-
     @ElementCollection
     @CollectionTable(name = "produto_notas", joinColumns = @JoinColumn(
             name = "produto_id", nullable = false, foreignKey = @ForeignKey(name = "produto_notas_produto_fk")
@@ -36,14 +33,6 @@ public abstract class Produto {
 
     public String getNome() {
         return nome;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
     }
 
     public void setNome(String nome) {
